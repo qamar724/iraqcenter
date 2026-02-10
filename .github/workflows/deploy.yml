@@ -46,28 +46,28 @@ jobs:
           git reset --hard origin/$BRANCH
 
           echo "📦 Installing Composer dependencies"
-          php8.1 /usr/local/bin/composer81 install \
+          php8.3 /usr/local/bin/composer install \
             --no-dev \
             --no-interaction \
             --prefer-dist \
             --optimize-autoloader
 
           echo "🔗 Creating storage symlink"
-          /usr/bin/php8.1 artisan storage:link || true
+          /usr/bin/php8.3 artisan storage:link || true
 
           echo "⚡ Optimizing Laravel"
-          /usr/bin/php8.1 artisan optimize:clear
-          /usr/bin/php8.1 artisan optimize
-          /usr/bin/php8.1 artisan config:cache
-          /usr/bin/php8.1 artisan route:cache
-          /usr/bin/php8.1 artisan view:cache
+          /usr/bin/php8.3 artisan optimize:clear
+          /usr/bin/php8.3 artisan optimize
+          /usr/bin/php8.3 artisan config:cache
+          /usr/bin/php8.3 artisan route:cache
+          /usr/bin/php8.3 artisan view:cache
 
           echo "🔐 Fixing permissions"
           sudo chown -R www-data:www-data $APP_PATH
           sudo chmod -R 775 storage bootstrap/cache
 
           echo "♻️ Reloading PHP-FPM"
-          sudo systemctl reload php8.1-fpm || true
+          sudo systemctl reload php8.3-fpm || true
 
           echo "✅ Deployment finished successfully 🎉"
           EOF
