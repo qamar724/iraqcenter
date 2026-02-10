@@ -15,36 +15,22 @@ jobs:
         run: |
           mkdir -p ~/.ssh
 
-          if [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
-            echo "🧩 Using DEV SSH key"
-            printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          elif [[ "${GITHUB_REF_NAME}" == "production" ]]; then
-            echo "🧩 Using PRODUCTION SSH key"
-            printf "%s" "${{ secrets.PRODUCTION_SSH_KEY }}" > ~/.ssh/id_rsa
-          fi
-
+          echo "🧩 Using DEV SSH key"
+          printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
+          # Add only dev server to known_hosts
           ssh-keyscan -T 10 -p 22 195.35.24.217 >> ~/.ssh/known_hosts || true
-          ssh-keyscan -T 10 -p 22 158.252.25.12 >> ~/.ssh/known_hosts || true
 
       - name: 🚀 Deploy Laravel Application
         run: |
-          if [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
-            SERVER_IP="195.35.24.217"
-            SSH_USER="root"
-            SSH_PORT="22"
-            APP_PATH="/var/www/html/jawad"
-            BRANCH="dev"
-            echo "🌱 Deploying DEV environment"
-          elif [[ "${GITHUB_REF_NAME}" == "production" ]]; then
-            SERVER_IP="158.252.25.12"
-            SSH_USER="ubuntu"
-            SSH_PORT="22"
-            APP_PATH="/var/www/html/jawad"
-            BRANCH="production"
-            echo "🏭 Deploying PRODUCTION environment"
-          fi
+          # DEV server configuration
+          SERVER_IP="195.35.24.217"
+          SSH_USER="root"
+          SSH_PORT="22"
+          APP_PATH="/var/www/html/iraqcenter"
+          BRANCH="dev"
+          echo "🌱 Deploying DEV environment"
 
           ssh -T -i ~/.ssh/id_rsa -p $SSH_PORT -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP << EOF
           set -e
@@ -65,7 +51,6 @@ jobs:
             --no-interaction \
             --prefer-dist \
             --optimize-autoloader
-
 
           echo "🔗 Creating storage symlink"
           /usr/bin/php8.1 artisan storage:link || true
