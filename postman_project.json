@@ -1,0 +1,2073 @@
+{
+    "info": {
+        "_postman_id": "08f9b8da-f83c-4284-95de-3441a87df1ea",
+        "name": "1_doctorssyndicate",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "20450949"
+    },
+"item": [
+    {
+     "name": "users",
+     "item": [
+{
+	"name": "Login",
+	"request": {
+		"method": "POST",
+		"header": [],
+		"body": {
+			"mode": "formdata",
+			"formdata": [
+				{
+					"key": "email",
+					"value": "hamza.obiedat@gmail.com",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text"
+				}
+			]
+		},
+		"url": {
+			"raw": "{{url}}/login",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"login"
+			]
+		}
+	},
+	"response": []
+},
+{
+	"name": "Logout",
+	"request": {
+		"method": "POST",
+		"header": [],
+		"url": {
+			"raw": "{{url}}/logout",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"logout"
+			]
+		}
+	},
+	"response": []
+},
+{
+	"name": "register",
+	"request": {
+		"method": "POST",
+		"header": [
+			{
+				"key": "Accept",
+				"value": "application/json",
+				"type": "text"
+			}
+		],
+		"body": {
+			"mode": "formdata",
+			"formdata": [
+				{
+					"key": "tbl_users_type_id",
+					"value": "2",
+					"type": "text"
+				},
+				{
+					"key": "name",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "123456",
+					"type": "text"
+				},
+				{
+					"key": "photo",
+					"type": "file",
+					"src": []
+				}
+			]
+		},
+		"url": {
+			"raw": "{{url}}/register",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"register"
+			]
+		}
+	},
+	"response": []
+},
+{
+	"name": "profile",
+	"request": {
+		"method": "GET",
+		"header": [],
+		"url": {
+			"raw": "{{url}}/profile",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"profile"
+			]
+		}
+	},
+	"response": []
+},
+{
+	"name": "updateUserData",
+	"request": {
+		"method": "POST",
+		"header": [],
+		"body": {
+			"mode": "formdata",
+			"formdata": [
+				{
+					"key": "name",
+					"value": "jaber",
+					"type": "text"
+				},
+				{
+					"key": "photo",
+					"type": "file",
+					"src": []
+				},
+				{
+					"key": "email",
+					"value": "hamza.obiedat@gmail.com",
+					"type": "text"
+				}
+			]
+		},
+		"url": {
+			"raw": "{{url}}/updateUserData",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"updateUserData"
+			]
+		}
+	},
+	"response": []
+},
+{
+	"name": "Change password",
+	"request": {
+		"method": "POST",
+		"header": [],
+		"body": {
+			"mode": "formdata",
+			"formdata": [
+				{
+					"key": "current_password",
+					"value": "123456",
+					"type": "text"
+				},
+				{
+					"key": "new_password",
+					"value": "12345678",
+					"type": "text"
+				}
+			]
+		},
+		"url": {
+			"raw": "{{url}}/updateUserData",
+			"host": [
+				"{{url}}"
+			],
+			"path": [
+				"updateUserData"
+			]
+		}
+	},
+	"response": []
+}, 
+ {
+     "name": "View users",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/administrator_users_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "administrator_users_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New users",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "email",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "profile_photo_path",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "tbl_users_type_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "phone",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "genders_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "city_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "specialties_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/administrator_users_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_users_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update users",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/administrator_users_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_users_update"
+            ],
+             "query": [
+                {
+                    "key": "name",
+                    "value": "" 
+                },
+                {
+                    "key": "email",
+                    "value": "" 
+                },
+                {
+                    "key": "profile_photo_path",
+                    "value": "" 
+                },
+                {
+                    "key": "tbl_users_type_id",
+                    "value": "" 
+                },
+                {
+                    "key": "phone",
+                    "value": "" 
+                },
+                {
+                    "key": "genders_id",
+                    "value": "" 
+                },
+                {
+                    "key": "city_id",
+                    "value": "" 
+                },
+                {
+                    "key": "specialties_id",
+                    "value": "" 
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete users",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/administrator_users_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_users_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "tbl_users_type",
+     "item": [
+ {
+     "name": "View tbl_users_type",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/administrator_tbl_users_type_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "administrator_tbl_users_type_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New tbl_users_type",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/administrator_tbl_users_type_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_tbl_users_type_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update tbl_users_type",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/administrator_tbl_users_type_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_tbl_users_type_update"
+            ],
+             "query": [
+                {
+                    "key": "name",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete tbl_users_type",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/administrator_tbl_users_type_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "administrator_tbl_users_type_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "genders",
+     "item": [
+ {
+     "name": "View genders",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_genders_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_genders_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New genders",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name_en",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "name_ar",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_genders_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_genders_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update genders",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_genders_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_genders_update"
+            ],
+             "query": [
+                {
+                    "key": "name_en",
+                    "value": "" 
+                },
+                {
+                    "key": "name_ar",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete genders",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_genders_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_genders_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "status",
+     "item": [
+ {
+     "name": "View status",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_status_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_status_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New status",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name_en",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "name_ar",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_status_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_status_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update status",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_status_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_status_update"
+            ],
+             "query": [
+                {
+                    "key": "name_en",
+                    "value": "" 
+                },
+                {
+                    "key": "name_ar",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete status",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_status_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_status_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "university_major",
+     "item": [
+ {
+     "name": "View university_major",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_university_major_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_university_major_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New university_major",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name_en",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "name_ar",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_university_major_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_university_major_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update university_major",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_university_major_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_university_major_update"
+            ],
+             "query": [
+                {
+                    "key": "name_en",
+                    "value": "" 
+                },
+                {
+                    "key": "name_ar",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete university_major",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_university_major_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_university_major_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "city",
+     "item": [
+ {
+     "name": "View city",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_city_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_city_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New city",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name_en",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "name_ar",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_city_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_city_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update city",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_city_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_city_update"
+            ],
+             "query": [
+                {
+                    "key": "name_en",
+                    "value": "" 
+                },
+                {
+                    "key": "name_ar",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete city",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_city_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_city_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "hospitals",
+     "item": [
+ {
+     "name": "View hospitals",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_hospitals_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_hospitals_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New hospitals",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "phone",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "email",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "city_id",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_hospitals_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update hospitals",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_hospitals_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_update"
+            ],
+             "query": [
+                {
+                    "key": "name",
+                    "value": "" 
+                },
+                {
+                    "key": "phone",
+                    "value": "" 
+                },
+                {
+                    "key": "email",
+                    "value": "" 
+                },
+                {
+                    "key": "city_id",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete hospitals",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_hospitals_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "specialties",
+     "item": [
+ {
+     "name": "View specialties",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_specialties_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_specialties_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New specialties",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name_en",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "name_ar",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_specialties_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_specialties_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update specialties",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_specialties_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_specialties_update"
+            ],
+             "query": [
+                {
+                    "key": "name_en",
+                    "value": "" 
+                },
+                {
+                    "key": "name_ar",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete specialties",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_specialties_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_specialties_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "hospitals_has_specialties",
+     "item": [
+ {
+     "name": "View hospitals_has_specialties",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_hospitals_has_specialties_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_hospitals_has_specialties_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New hospitals_has_specialties",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "specialties_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_hospitals_has_specialties_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_has_specialties_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update hospitals_has_specialties",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_hospitals_has_specialties_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_has_specialties_update"
+            ],
+             "query": [
+                {
+                    "key": "specialties_id",
+                    "value": "" 
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete hospitals_has_specialties",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_hospitals_has_specialties_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_hospitals_has_specialties_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "distributions",
+     "item": [
+ {
+     "name": "View distributions",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/doctorsdistributions_distributions_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "doctorsdistributions_distributions_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New distributions",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "users_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "hospitals_has_specialties_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "status_id",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/doctorsdistributions_distributions_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "doctorsdistributions_distributions_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update distributions",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/doctorsdistributions_distributions_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "doctorsdistributions_distributions_update"
+            ],
+             "query": [
+                {
+                    "key": "users_id",
+                    "value": "" 
+                },
+                {
+                    "key": "hospitals_id",
+                    "value": "" 
+                },
+                {
+                    "key": "hospitals_has_specialties_id",
+                    "value": "" 
+                },
+                {
+                    "key": "status_id",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete distributions",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/doctorsdistributions_distributions_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "doctorsdistributions_distributions_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "clinical_setting",
+     "item": [
+ {
+     "name": "View clinical_setting",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_clinical_setting_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_clinical_setting_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New clinical_setting",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_clinical_setting_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_clinical_setting_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update clinical_setting",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_clinical_setting_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_clinical_setting_update"
+            ],
+             "query": [
+                {
+                    "key": "name",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete clinical_setting",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_clinical_setting_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_clinical_setting_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "monthly_evaluation_forms",
+     "item": [
+ {
+     "name": "View monthly_evaluation_forms",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_monthly_evaluation_forms_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_monthly_evaluation_forms_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New monthly_evaluation_forms",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "name",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_monthly_evaluation_forms_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_monthly_evaluation_forms_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update monthly_evaluation_forms",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_monthly_evaluation_forms_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_monthly_evaluation_forms_update"
+            ],
+             "query": [
+                {
+                    "key": "name",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete monthly_evaluation_forms",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_monthly_evaluation_forms_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_monthly_evaluation_forms_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "assessment_criteria",
+     "item": [
+ {
+     "name": "View assessment_criteria",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/settings_assessment_criteria_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "settings_assessment_criteria_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New assessment_criteria",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "monthly_evaluation_forms_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "question",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_assessment_criteria_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_assessment_criteria_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update assessment_criteria",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/settings_assessment_criteria_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_assessment_criteria_update"
+            ],
+             "query": [
+                {
+                    "key": "monthly_evaluation_forms_id",
+                    "value": "" 
+                },
+                {
+                    "key": "question",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete assessment_criteria",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/settings_assessment_criteria_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "settings_assessment_criteria_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "monthly_evaluations",
+     "item": [
+ {
+     "name": "View monthly_evaluations",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/evaluations_monthly_evaluations_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "evaluations_monthly_evaluations_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New monthly_evaluations",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "users_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "hospitals_has_specialties_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "monthly_evaluation_forms_id",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update monthly_evaluations",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_update"
+            ],
+             "query": [
+                {
+                    "key": "users_id",
+                    "value": "" 
+                },
+                {
+                    "key": "hospitals_has_specialties_id",
+                    "value": "" 
+                },
+                {
+                    "key": "monthly_evaluation_forms_id",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete monthly_evaluations",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+},
+    {
+     "name": "monthly_evaluations_details",
+     "item": [
+ {
+     "name": "View monthly_evaluations_details",
+     "request": {
+         "method": "GET",
+         "header": [],
+         "url": {
+             "raw": "{{url}}/evaluations_monthly_evaluations_details_viewAll",
+             "host": [
+                 "{{url}}"
+             ],
+             "path": [
+                 "evaluations_monthly_evaluations_details_viewAll"
+             ]
+         }
+     },
+     "response": []
+ },
+{
+    "name": "Insert New monthly_evaluations_details",
+    "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+                {
+                    "key": "monthly_evaluations_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "assessment_criteria_id",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "n_a",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "below_standard",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "meets_standard",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "above_standard",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "feedback_discussion",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "feedback",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "aspects",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "suggested",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "able_perform_procedure",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "unable_perform_procedure",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "trained_and_competent",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "able_perform_procedure_limited",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "competent_perform_procedure_unsupervised",
+                    "value": "",
+                    "type": "text"
+                },
+                {
+                    "key": "agree_action_plan",
+                    "value": "",
+                    "type": "text"
+                } 
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_details_insert",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_details_insert"
+            ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Update monthly_evaluations_details",
+    "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+            "mode": "formdata",
+            "formdata": [
+            ]
+        },
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_details_update",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_details_update"
+            ],
+             "query": [
+                {
+                    "key": "monthly_evaluations_id",
+                    "value": "" 
+                },
+                {
+                    "key": "assessment_criteria_id",
+                    "value": "" 
+                },
+                {
+                    "key": "n_a",
+                    "value": "" 
+                },
+                {
+                    "key": "below_standard",
+                    "value": "" 
+                },
+                {
+                    "key": "meets_standard",
+                    "value": "" 
+                },
+                {
+                    "key": "above_standard",
+                    "value": "" 
+                },
+                {
+                    "key": "feedback_discussion",
+                    "value": "" 
+                },
+                {
+                    "key": "feedback",
+                    "value": "" 
+                },
+                {
+                    "key": "aspects",
+                    "value": "" 
+                },
+                {
+                    "key": "suggested",
+                    "value": "" 
+                },
+                {
+                    "key": "able_perform_procedure",
+                    "value": "" 
+                },
+                {
+                    "key": "unable_perform_procedure",
+                    "value": "" 
+                },
+                {
+                    "key": "trained_and_competent",
+                    "value": "" 
+                },
+                {
+                    "key": "able_perform_procedure_limited",
+                    "value": "" 
+                },
+                {
+                    "key": "competent_perform_procedure_unsupervised",
+                    "value": "" 
+                },
+                {
+                    "key": "agree_action_plan",
+                    "value": "" 
+                } 
+             ]
+        }
+    },
+    "response": []
+},
+{
+    "name": "Delete monthly_evaluations_details",
+    "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+            "raw": "{{url}}/evaluations_monthly_evaluations_details_delete?id=4",
+            "host": [
+                "{{url}}"
+            ],
+            "path": [
+                "evaluations_monthly_evaluations_details_delete"
+            ],
+            "query": [
+                {
+                    "key": "id",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    "response": []
+}
+]
+} 
+],
+"auth": {
+    "type": "bearer",
+    "bearer": [
+        {
+            "key": "token",
+            "value": "",
+            "type": "string"
+        }
+    ]
+},
+"event": [
+    {
+        "listen": "prerequest",
+        "script": {
+            "type": "text/javascript",
+            "exec": [
+                ""
+            ]
+        }
+    },
+    {
+        "listen": "test",
+        "script": {
+            "type": "text/javascript",
+            "exec": [
+                ""
+            ]
+        }
+    }
+],
+"variable": [
+    {
+        "key": "url",
+        "value": "http://127.0.0.1:8000/api",
+        "type": "string"
+    }
+]    
+
+}

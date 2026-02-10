@@ -1,0 +1,32 @@
+<?php 
+//7788996653210001 
+ return  [
+ "submenu_monthly_evaluations" =>    "التقييمات الشهرية",  
+ "submenu_monthly_evaluations_details" =>    "تفاصيل التقييمات الشهرية",  
+ "evaluations_monthly_evaluations_id" =>    "الرقم التعريفي",  
+ "evaluations_monthly_evaluations_users_id_name" =>    "المستخدمون",  
+ "evaluations_monthly_evaluations_hospitals_has_specialties_id_id" =>    "المستشفيات التي تملك إختصاصات",  
+ "evaluations_monthly_evaluations_monthly_evaluation_forms_id_name" =>    "إستمارة التقييمات الشهرية",  
+ "evaluations_monthly_evaluations_details_id" =>    "الرقم التعريفي",  
+ "evaluations_monthly_evaluations_details_monthly_evaluations_id_id" =>    "التقييم الشهري",  
+ "evaluations_monthly_evaluations_details_assessment_criteria_id_question" =>    "معايير التقييم",  
+ "evaluations_monthly_evaluations_details_n_a" =>    "NA",  
+ "evaluations_monthly_evaluations_details_below_standard" =>    "تحت المعيار",  
+ "evaluations_monthly_evaluations_details_meets_standard" =>    "يتوافق مع المعيار",  
+ "evaluations_monthly_evaluations_details_above_standard" =>    "أعلى من المعيار",  
+ "evaluations_monthly_evaluations_details_feedback_discussion" =>    "مناقشة الملاحظات",  
+ "evaluations_monthly_evaluations_details_feedback" =>    "الملاحظات",  
+ "evaluations_monthly_evaluations_details_aspects" =>    "جوانب",  
+ "evaluations_monthly_evaluations_details_suggested" =>    "المقترح",  
+ "evaluations_monthly_evaluations_details_able_perform_procedure" =>    "قادرة على تنفيذ الإجراء",  
+ "evaluations_monthly_evaluations_details_unable_perform_procedure" =>    "غير قادرة على تنفيذ الإجراء",  
+ "evaluations_monthly_evaluations_details_trained_and_competent" =>    "مدرَب وكفؤ",  
+ "evaluations_monthly_evaluations_details_able_perform_procedure_limited" =>    "(قادر على تنفيذ الإجراء ( محدود",  
+ "evaluations_monthly_evaluations_details_competent_perform_procedure_unsupervised" =>    "أداء الإجراء بكفاءة دون إشراف",  
+ "evaluations_monthly_evaluations_details_agree_action_plan" =>    "الموافقة على خطة العمل",  
+  "form_name" =>    "اسم النموذج",  
+ "submitted_date" =>    "تاريخ التقديم",  
+ "assessor_name" =>    "اسم المقيّم",  
+ "no_evaluations" =>    "لم يتم تقديم أي تقييمات بعد",  
+]; 
+?>  

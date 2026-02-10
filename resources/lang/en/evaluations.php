@@ -1,0 +1,32 @@
+<?php 
+//7788996653210001 
+ return  [
+ "submenu_monthly_evaluations" =>    "monthly evaluations",  
+ "submenu_monthly_evaluations_details" =>    "monthly evaluations details",  
+ "evaluations_monthly_evaluations_id" =>    "Id",  
+ "evaluations_monthly_evaluations_users_id_name" =>    "Users",  
+ "evaluations_monthly_evaluations_hospitals_has_specialties_id_id" =>    "Hospitals Has Specialties",  
+ "evaluations_monthly_evaluations_monthly_evaluation_forms_id_name" =>    "Monthly Evaluation Forms",  
+ "evaluations_monthly_evaluations_details_id" =>    "Id",  
+ "evaluations_monthly_evaluations_details_monthly_evaluations_id_id" =>    "Monthly Evaluations",  
+ "evaluations_monthly_evaluations_details_assessment_criteria_id_question" =>    "Assessment Criteria",  
+ "evaluations_monthly_evaluations_details_n_a" =>    "N A",  
+ "evaluations_monthly_evaluations_details_below_standard" =>    "Below Standard",  
+ "evaluations_monthly_evaluations_details_meets_standard" =>    "Meets Standard",  
+ "evaluations_monthly_evaluations_details_above_standard" =>    "Above Standard",  
+ "evaluations_monthly_evaluations_details_feedback_discussion" =>    "Feedback Discussion",  
+ "evaluations_monthly_evaluations_details_feedback" =>    "Feedback",  
+ "evaluations_monthly_evaluations_details_aspects" =>    "Aspects",  
+ "evaluations_monthly_evaluations_details_suggested" =>    "Suggested",  
+ "evaluations_monthly_evaluations_details_able_perform_procedure" =>    "Able Perform Procedure",  
+ "evaluations_monthly_evaluations_details_unable_perform_procedure" =>    "Unable Perform Procedure",  
+ "evaluations_monthly_evaluations_details_trained_and_competent" =>    "Trained And Competent",  
+ "evaluations_monthly_evaluations_details_able_perform_procedure_limited" =>    "Able Perform Procedure Limited",  
+ "evaluations_monthly_evaluations_details_competent_perform_procedure_unsupervised" =>    "Competent Perform Procedure Unsupervised",  
+ "evaluations_monthly_evaluations_details_agree_action_plan" =>    "Agree Action Plan",  
+ "form_name" =>    "Form Name",  
+ "submitted_date" =>    "Submitted Date",  
+ "assessor_name" =>    "Assessor Name",  
+ "no_evaluations" =>    "No evaluations submitted yet",  
+]; 
+?>  

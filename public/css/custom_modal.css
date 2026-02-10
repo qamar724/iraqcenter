@@ -1,0 +1,482 @@
+/**
+ * Custom Modal CSS
+ * Used for nested modals (popup inside popup)
+ */
+
+/* Custom Modal Overlay */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom Modal Container */
+.custom-modal-container {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 95vh;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  animation: customModalSlideIn 0.3s ease;
+}
+
+/* Evaluation Form Modal - Wider */
+.custom-modal-container.evaluation-form-modal {
+  max-width: 900px;
+  width: 95%;
+  max-height: 95vh;
+}
+
+@keyframes customModalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom Modal Header */
+.custom-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+.custom-modal-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.custom-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6c757d;
+  line-height: 1;
+}
+
+.custom-modal-close:hover {
+  color: #dc3545;
+}
+
+/* Custom Modal Body */
+.custom-modal-body {
+  padding: 20px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+/* Evaluation Form Body - Larger scroll area */
+.evaluation-form-body {
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+/* Custom Modal Footer */
+.custom-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+/* ============================================= */
+/* EVALUATION FORM SPECIFIC STYLES */
+/* ============================================= */
+
+/* Purple Header - Matches the Word Document */
+.evaluation-header {
+  background: linear-gradient(135deg, #5b3d7a 0%, #7b5b9a 100%);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 3px solid #4a2d6a;
+}
+
+.evaluation-header h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.evaluation-header h5 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff !important;
+}
+
+.evaluation-header h6 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffd700 !important;
+}
+
+/* Evaluation Tables */
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.evaluation-table th,
+.evaluation-table td {
+  border: 1px solid #333;
+  padding: 8px 12px;
+}
+
+/* Info Table (Trainee details) */
+.info-table .label-cell {
+  width: 200px;
+  background-color: #f8f9fa;
+  font-weight: 500;
+}
+
+/* CBD Title label - Red color */
+.info-table .label-cell.cbd-title-label {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+.info-table .value-cell {
+  background-color: #fff;
+}
+
+.info-table .value-cell input {
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+/* Clinical Settings Checkboxes */
+#clinical_settings_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#clinical_settings_container label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+#clinical_settings_container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Instructions Text */
+.evaluation-instructions {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #fff;
+  border: none;
+}
+
+.evaluation-instructions p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Assessment Criteria Table */
+.criteria-table {
+  margin-top: 10px;
+}
+
+.criteria-table .criteria-header {
+  background-color: #f8f9fa;
+  text-align: left;
+  width: 50%;
+}
+
+.criteria-table .rating-header {
+  background-color: #f8f9fa;
+  text-align: center;
+  width: 12.5%;
+  font-size: 0.9rem;
+}
+
+.criteria-table tbody tr td:first-child {
+  text-align: left;
+}
+
+.criteria-table tbody tr td {
+  text-align: center;
+}
+
+.criteria-table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+/* Radio buttons in criteria table */
+.criteria-table input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Highlight important criteria */
+.criteria-bold {
+  font-weight: 700;
+}
+
+/* Feedback Section */
+.feedback-section {
+  margin-top: 20px;
+}
+
+.feedback-section h6 {
+  margin-bottom: 10px;
+}
+
+.feedback-table .feedback-label {
+  width: 200px;
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.feedback-table .feedback-input {
+  background-color: #fff;
+}
+
+.feedback-table .feedback-input input {
+  border: none;
+  width: 100%;
+}
+
+/* Text Sections */
+.text-section {
+  margin-top: 20px;
+}
+
+.text-section label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.text-section textarea {
+  border: 1px solid #333;
+  resize: vertical;
+}
+
+/* Signatures Section */
+.signatures-section {
+  margin-top: 30px;
+}
+
+.signature-table th {
+  background-color: #f8f9fa;
+  text-align: center;
+  width: 50%;
+}
+
+.signature-box {
+  height: 80px;
+  background-color: #fff;
+}
+
+/* ============================================= */
+/* FORM-SPECIFIC STYLES */
+/* ============================================= */
+
+/* Procedure Name label - Red color (DOPS) */
+.procedure-name-label {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+/* Clinical Problem label - Red color (Mini-CEX) */
+.clinical-problem-label {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+/* DOPS Independent Practice Options */
+.independent-practice-options {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.independent-practice-options .checkbox-option {
+  display: block;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.independent-practice-options .checkbox-option input[type="checkbox"] {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Mini-CEX Time Section */
+#minicex_time_section .form-control-inline {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* Complexity Table */
+.complexity-table {
+  margin-top: 15px;
+}
+
+.complexity-table td {
+  text-align: center;
+}
+
+.complexity-header {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.complexity-option {
+  background-color: #fff;
+}
+
+.complexity-option.complexity-high {
+  background-color: transparent;
+  color: #000;
+}
+
+/* Global Rating Section */
+.global-rating-section {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+}
+
+.global-rating-section p {
+  margin-bottom: 15px;
+}
+
+/* Competency Table */
+.competency-table {
+  margin-top: 10px;
+}
+
+.competency-table th {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.competency-table td {
+  text-align: center;
+  padding: 15px;
+}
+
+.competency-table input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================= */
+/* MINI-CEX DESCRIPTION SECTION */
+/* ============================================= */
+
+.minicex-info-box {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #f8f9fa;
+}
+
+.minicex-info-box .minicex-intro {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.minicex-info-box p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.minicex-info-box .descriptors-title {
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.minicex-info-box .criteria-name {
+  color: #000;
+}
+
+/* Form control inline for Mini-CEX */
+.form-control-inline {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* Patient data inline styling */
+.patient-data-inline {
+  display: inline-block;
+}
+
+.patient-data-inline input {
+  border: 1px solid #333;
+  padding: 5px 8px;
+  border-radius: 3px;
+}
+
+/* Read-only mode styling */
+.form-read-only {
+  background-color: #f9f9f9;
+}
+
+.form-read-only input:disabled,
+.form-read-only select:disabled,
+.form-read-only textarea:disabled {
+  background-color: #f5f5f5 !important;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.form-read-only .checkbox-option input:disabled {
+  cursor: not-allowed;
+}
+
+/* Read-only notice banner */
+.read-only-notice {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,58 @@
+.imageTable{
+    width: 60px;
+    height: 60px;
+}
+
+.loaderImgPopup{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.main_content{
+    margin-top: 20px;;
+}
+
+.badge-success{
+    background-color: #28a745;
+}
+.badge-danger{
+    background-color: #dc3545;
+}
+.badge-warning{
+    background-color: #ffc107;
+}
+.badge-info{
+    background-color: #17a2b8;
+}
+.badge-primary{
+    background-color: #007bff;
+}
+.badge-secondary{
+    background-color: #6c757d;
+}
+.badge-light{
+    background-color: #f8f9fa;
+}
+.badge-dark{
+    background-color: #343a40;
+}
+.badge-white{
+    background-color: #ffffff;
+}
+.badge-transparent{
+    background-color: transparent;
+}
+.badge-dark{
+    background-color: #343a40;
+}
+
+
+.select2-container {
+ 
+    z-index: 10000;
+}
+
+.logo-lg{
+    max-width: 160px !important;
+    max-height: 100px;
+}

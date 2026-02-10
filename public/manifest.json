@@ -1,0 +1,17 @@
+{
+    "name": "My App",
+    "short_name": "LPT",
+    "start_url": "/adminPanel/dashboard",
+    "background_color": "#3695eb",
+    "description": "My Tasks App",
+    "display": "fullscreen",
+    "theme_color": "#3695eb",
+    "icons": [
+        {
+            "src": "images/logo_wpa.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

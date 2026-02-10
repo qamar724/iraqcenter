@@ -1,0 +1,88 @@
+name: Deploy Laravel to Servers
+run-name: Deploy Laravel (${{ github.ref_name }})
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠️ Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+
+          if [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
+            echo "🧩 Using DEV SSH key"
+            printf "%s" "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          elif [[ "${GITHUB_REF_NAME}" == "production" ]]; then
+            echo "🧩 Using PRODUCTION SSH key"
+            printf "%s" "${{ secrets.PRODUCTION_SSH_KEY }}" > ~/.ssh/id_rsa
+          fi
+
+          chmod 600 ~/.ssh/id_rsa
+
+          ssh-keyscan -T 10 -p 22 195.35.24.217 >> ~/.ssh/known_hosts || true
+          ssh-keyscan -T 10 -p 22 158.252.25.12 >> ~/.ssh/known_hosts || true
+
+      - name: 🚀 Deploy Laravel Application
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
+            SERVER_IP="195.35.24.217"
+            SSH_USER="root"
+            SSH_PORT="22"
+            APP_PATH="/var/www/html/jawad"
+            BRANCH="dev"
+            echo "🌱 Deploying DEV environment"
+          elif [[ "${GITHUB_REF_NAME}" == "production" ]]; then
+            SERVER_IP="158.252.25.12"
+            SSH_USER="ubuntu"
+            SSH_PORT="22"
+            APP_PATH="/var/www/html/jawad"
+            BRANCH="production"
+            echo "🏭 Deploying PRODUCTION environment"
+          fi
+
+          ssh -T -i ~/.ssh/id_rsa -p $SSH_PORT -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP << EOF
+          set -e
+
+          echo "🚀 Starting deployment on \$(hostname)"
+          cd $APP_PATH
+
+          echo "🔧 Ensuring correct Git ownership"
+          sudo chown -R $SSH_USER:$SSH_USER .git || true
+
+          echo "📥 Fetching latest code"
+          git fetch origin
+          git reset --hard origin/$BRANCH
+
+          echo "📦 Installing Composer dependencies"
+          php8.1 /usr/local/bin/composer81 install \
+            --no-dev \
+            --no-interaction \
+            --prefer-dist \
+            --optimize-autoloader
+
+
+          echo "🔗 Creating storage symlink"
+          /usr/bin/php8.1 artisan storage:link || true
+
+          echo "⚡ Optimizing Laravel"
+          /usr/bin/php8.1 artisan optimize:clear
+          /usr/bin/php8.1 artisan optimize
+          /usr/bin/php8.1 artisan config:cache
+          /usr/bin/php8.1 artisan route:cache
+          /usr/bin/php8.1 artisan view:cache
+
+          echo "🔐 Fixing permissions"
+          sudo chown -R www-data:www-data $APP_PATH
+          sudo chmod -R 775 storage bootstrap/cache
+
+          echo "♻️ Reloading PHP-FPM"
+          sudo systemctl reload php8.1-fpm || true
+
+          echo "✅ Deployment finished successfully 🎉"
+          EOF
